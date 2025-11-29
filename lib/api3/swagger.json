@@ -1371,7 +1371,6 @@
       },
       "DocumentBase": {
         "required": [
-          "app",
           "date"
         ],
         "properties": {
@@ -1390,11 +1389,6 @@
             "type": "integer",
             "description": "Local UTC offset (timezone) of the event in minutes. This field can be set either directly by the client (in the incoming document) or it is automatically parsed from the `date` field.\n\nNote&#58; this field is immutable by the client (it cannot be updated or patched)",
             "example": 120
-          },
-          "app": {
-            "type": "string",
-            "description": "Application or system in which the record was entered by human or device for the first time.\n\nNote&#58; this field is immutable by the client (it cannot be updated or patched)",
-            "example": "xdrip"
           },
           "device": {
             "type": "string",
@@ -1479,22 +1473,6 @@
                 "type": "string",
                 "description": "Direction of glucose trend reported by CGM. (only available for sgv types)",
                 "example": "\"DoubleDown\", \"SingleDown\", \"FortyFiveDown\", \"Flat\", \"FortyFiveUp\", \"SingleUp\", \"DoubleUp\", \"NOT COMPUTABLE\", \"RATE OUT OF RANGE\" for xdrip"
-              },
-              "noise": {
-                "type": "number",
-                "description": "Noise level at time of reading. (only available for sgv types)"
-              },
-              "filtered": {
-                "type": "number",
-                "description": "The raw filtered value directly from CGM transmitter. (only available for sgv types)"
-              },
-              "unfiltered": {
-                "type": "number",
-                "description": "The raw unfiltered value directly from CGM transmitter. (only available for sgv types)"
-              },
-              "rssi": {
-                "type": "number",
-                "description": "The signal strength from CGM transmitter. (only available for sgv types)"
               },
               "units": {
                 "type": "string",
@@ -1726,7 +1704,6 @@
           "carbs": 10,
           "insulin": 1,
           "eventType": "Snack Bolus",
-          "app": "xdrip",
           "subject": "uploader"
         },
         "oneOf": [
@@ -1762,7 +1739,6 @@
           "eventType": "Snack Bolus",
           "srvCreated": 1532936218000,
           "srvModified": 1532936218000,
-          "app": "xdrip",
           "subject": "uploader",
           "modifiedBy": "admin"
         },

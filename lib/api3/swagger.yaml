@@ -1147,17 +1147,6 @@ components:
 
           example: 120
 
-        app:
-          type: string
-          description:
-            Application or system in which the record was entered by human or device for the first time.
-
-
-            Note&#58; this field is immutable by the client (it cannot be updated or patched)
-
-
-          example: xdrip
-
         device:
           type: string
           description:
@@ -1246,7 +1235,6 @@ components:
 
       required:
         - date
-        - app
 
 
     DeviceStatus:
@@ -1279,23 +1267,6 @@ components:
               type: string
               description: Direction of glucose trend reported by CGM. (only available for sgv types)
               example: '"DoubleDown", "SingleDown", "FortyFiveDown", "Flat", "FortyFiveUp", "SingleUp", "DoubleUp", "NOT COMPUTABLE", "RATE OUT OF RANGE" for xdrip'
-
-            noise:
-              type: number
-              description: Noise level at time of reading. (only available for sgv types)
-              example: 'xdrip: 0, 1, 2=high, 3=high_for_predict, 4=very high, 5=extreme'
-
-            filtered:
-              type: number
-              description: The raw filtered value directly from CGM transmitter. (only available for sgv types)
-
-            unfiltered:
-              type: number
-              description: The raw unfiltered value directly from CGM transmitter. (only available for sgv types)
-
-            rssi:
-              type: number
-              description: The signal strength from CGM transmitter. (only available for sgv types)
 
             units:
               type: string
@@ -1504,7 +1475,6 @@ components:
         'carbs': 10
         'insulin': 1
         'eventType': 'Snack Bolus'
-        'app': 'xdrip'
         'subject': 'uploader'
 
 
